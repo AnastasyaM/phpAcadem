@@ -1,0 +1,29 @@
+body {
+    margin: 30px 50px;
+}
+@font-face {
+    font-family: Roboto-light;
+    src: url(fonts/Roboto-Light.ttf);
+}
+
+.rob_light {
+    font-family: Roboto-light;
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+.rob_regular {
+    font-family: Roboto-Regular;
+}
+@font-face {
+    font-family: "PT Sans";
+    src: url(fonts/PT Sans.ttf);
+}
+.pt_sans {
+    font-family: "PT Sans";
+}
+.autor {
+    font-family: 'PT Sans';
+    font-weight: bold;
+}

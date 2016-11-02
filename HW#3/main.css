@@ -1,0 +1,43 @@
+body {
+    font-family: "PT Sans";
+    background-color: aliceblue;
+}
+h1 {
+    text-align: center;
+}
+span {
+    font-size: 16px;
+    font-weight: bold;
+}
+.steps_1 {
+    display: block;
+    color: lightslategrey;
+    padding-bottom: 10px;
+}
+.steps_2 {
+    display: block;
+    color: lightslategrey;
+    padding-bottom: 10px;
+}
+ul>li {
+    list-style: disc;
+}
+.causes {
+    width: 800px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: #545454;
+    background-color: white;
+    border: 1px solid powderblue;
+    border-radius: 10px;
+}
+.protection {
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    color: #545454;
+    background-color: white;
+    border: 1px solid powderblue;
+    border-radius: 10px;
+}
