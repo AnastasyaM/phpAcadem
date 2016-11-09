@@ -1,29 +1,32 @@
-body {
-    margin: 30px 50px;
+div {
+    border: 2px solid black;
 }
-@font-face {
-    font-family: Roboto-light;
-    src: url(fonts/Roboto-Light.ttf);
+.container {
+    position: relative;
+    width: 800px;
+    height: 560px;
+    border-radius: 30px;
 }
-
-.rob_light {
-    font-family: Roboto-light;
+.item_1 {
+    width: 135px;
+    height: 100px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-@font-face {
-    font-family: Roboto-Regular;
-    src: url(fonts/Roboto-Regular.ttf);
+.item_2 {
+    width: 350px;
+    height: 180px;
+    border-radius: 30px;
+    position: absolute;
+    right: 0;
+    top: 200px;
 }
-.rob_regular {
-    font-family: Roboto-Regular;
-}
-@font-face {
-    font-family: "PT Sans";
-    src: url(fonts/PT Sans.ttf);
-}
-.pt_sans {
-    font-family: "PT Sans";
-}
-.autor {
-    font-family: 'PT Sans';
-    font-weight: bold;
+.item_3 {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 40px;
+    left: 80px;
 }
