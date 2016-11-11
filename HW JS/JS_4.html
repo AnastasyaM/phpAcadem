@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JS</title>
+		<script type="text/javascript">
+			var arr = new Array();
+			for ( i = 0; i < 10; i++ ) {
+				arr[i] = Math.floor((Math.random() * 100) + 1);}
+			arr.sort(function(a,b){return a-b;});
+			document.write( arr + 'Сортировка массива' + '</br>' );
+			
+			
+			var arr = new Array (1, 2, 3, 4, 5, 6, 7);
+			
+			
+			for (i = 1; i < arr.length/2; i++) {
+				var a = arr[i - 1];
+				var b = arr.length;
+				arr[i - 1] = arr[b - i];
+				arr[b - i] = a;
+			}
+			document.write (arr + 'Реверс массива');
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
