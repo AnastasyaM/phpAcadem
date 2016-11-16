@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<title>JS</title>
+		<script type="text/javascript">
+			
+			var add = function (a, b) {
+				return a + b;
+			};
+			var sub = function (a, b) {
+				return a - b;
+			};
+			var mul = function (a, b) {
+				return a * b;
+			}
+			var div = function (a, b) {
+				return a / b;
+			}
+			var rem = function (a, b) {
+				return a % b;
+			}
+			
+			function show(callBackFunction, a, b) {
+				
+				var result = callBackFunction(a, b);
+				alert (result);
+			};
+			
+			var a = parseInt(prompt('Введите первое значение'));
+			var operation = prompt ('Введите знак операции');
+			var b = parseInt(prompt ('Введите второе значение'));
+			
+			switch (operation) {
+				case "+":
+					show (add, a, b);
+						break;
+				case "-":
+					show (sub, a, b);
+						break;
+				case "*":
+					show (mul, a, b);
+						break;
+				case "/":
+					show (div, a, b);
+						break;
+				case "%":
+					show (rem, a, b);
+						break;
+					}
+
+	    </script>
+	</head>
+<body>
+
+</body>
+</html>
