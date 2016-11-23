@@ -1,0 +1,23 @@
+.form {
+    float: left;
+    margin: 10px;
+}
+input {
+    margin-top: 10px;
+    
+}
+table {
+    float: right;
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    margin: 20px;
+}
+td {
+    border: 1px solid black;
+}
+.head {
+    font-weight: bold;
+}

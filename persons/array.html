@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array</title>
+	<link href="main.css" rel="stylesheet">
+	<script src="person-manager.js"></script>
+</head>
+<body>
+	<div class="form">
+		<form name="main_form" id="form">
+			<p class="name">
+				<label for="name">Введите имя:</label><br>
+				<input id="name" type="text" name="name" value="">
+			</p>
+			<p class="sname">
+				<label for="sname">Введите фамилию:</label><br>
+				<input id="sname" type="text" name="sname" value="">
+			</p>
+			<p>
+				<label for="age">Введите возраст:</label><br>
+				<input id="age" type="text" name="age" value="">
+			</p>
+			<p>
+				<label for="lang">Ваведите языки программирования через запятую:</label><br>
+				<input id="lang" type="text" name="lang" value="">
+			</p>
+			
+			<p class="send">
+			<input type="button"  value="Добавить" onclick="addPerson()">
+			</p>
+			
+			<p class="view">
+				<input type="button"  value="Вывести" onclick="viewPersons()">
+			</p>
+			
+			<p class="sort">
+				<input type="button"  value="Сортировать по имени" onclick="sortPersonsByName()">
+			</p>
+			
+			<p class="sort">
+				<input type="button"  value="Сортировать по возрасту" onclick="sortPersonsByAge()">
+			</p>
+			
+			<p class="sort">
+				<input type="button"  value="Сортировать по кол-ву языков" onclick="sortPersonsByLang()">
+			</p>
+			
+		</form>
+	</div>
+	
+	<table>
+		<thead>
+			<tr class="head">
+				<td>Имя</td>
+				<td>Фамилия</td>
+				<td>Возраст</td>
+				<td>Языки программирования</td>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+</body>
+</html>
