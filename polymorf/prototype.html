@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rectangle</title>
+	<script type="text/javascript">
+
+        function Result(name, a, b) {
+            this.name = name;
+            this.a = a;
+            this.b = b;
+        }
+
+        Result.prototype.getArea = function() {
+            return this.a * this.b;
+        }
+        Result.prototype.valueOf = function() {
+            return this.getArea();
+        }
+        Result.prototype.toString = function() {
+            return this.name + " площадь " + " : " + this.valueOf() + "<br />";
+        }
+
+        function Rectangle(name, a, b) {
+            this.name = name;
+            this.a = a;
+            this.b = b;
+        }
+        function Square(name, a, b) {
+            this.name = name;
+            this.a = a;
+            this.b = b;
+        }
+        function Circle(name, a, b) {
+            this.name = name;
+            this.a = a;
+            this.b = b;
+        }
+        function Triangle(name, a, b) {
+            this.name = name;
+            this.a = a;
+            this.b = b;
+        }
+
+        var result = new Result( 'name', 'a', 'b');
+
+        Rectangle.prototype = result;
+        Square.prototype = result;
+        Circle.prototype = result;
+        Triangle.prototype = result;
+
+        var rectangle = new Rectangle('Прямоугольник', 10, 15);
+        var square = new Square('Квадрат', 10, 10);
+        var сircle = new Circle('Круг', 3.14, 20);
+        var triangle = new Triangle('Треугольник', 20, 40);
+
+        Circle.prototype.getArea = function() {
+            return this.a * Math.pow(this.b, 2);
+        }
+
+        Triangle.prototype.getArea = function() {
+            return (this.a * this.b) / 2;
+        }
+
+        document.write(rectangle.toString());
+        document.write(square.toString());
+        document.write(сircle.toString());
+        document.write(triangle.toString());
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>
