@@ -6,29 +6,50 @@
 	<script src="angular.js"></script>
 	<script src="list.js"></script>
 	<link rel="stylesheet" href="list.css">
-	<link href="bootstrap.css" rel="stylesheet" />
-	<link href="bootstrap-theme.css" rel="stylesheet" />
+	<link href="bootstrap.css" rel="stylesheet">
+	<link href="bootstrap-theme.css" rel="stylesheet">
 </head>
 <body>
-<div style="width:400px; margin:0 auto">
-	<h2 class="h1">Список покупок</h2>
-	<div class="panel" ng-controller="ListCtrl">
-		<span class="h4">Осталось {{remain()}} из {{items.length}}</span>
-		<table class="table table-striped">
-			<tbody>
-			<tr ng-repeat="item in items">
-				<td><input class="checkbox-inline" type="checkbox" ng-model="item.done"></td>
-				<td><span class="done-{{item.done}}">{{item.text}}</span></td>
-			</tr>
-			</tbody>
-		</table>
-		<form ng-submit="addItem()">
-			<input class="form-control" type="text" ng-model="itemText" size="30"
-			       placeholder="Добавить покупку.">
-			<input class="btn btn-primary" type="submit" value="Добавить">
-		</form>
-	</div>
+	<div style="width:600px; margin:0 auto">
+		<h2 class="h1">Список задач</h2>
+		<div class="panel" ng-controller="ListCtrl">
+		
+			<span class="h4">Осталось {{remain()}} из {{items.length}}</span>
+		
+			<table class="table table-striped">
+				<tbody ng-repeat="item in items">
+				<tr ng-if='item != activeItem'>
+					<td><input class="checkbox-inline" type="checkbox" ng-model="item.done"></td>
+					<td><span class="done-{{item.done}}">{{item.text}}</span></td>
+					<td><span>{{item.date | date:"dd.MM.yyyy"}}</span></td>
+					<td>
+						<input class="btn btn-primary" type="button" value="Редактировать" ng-click="edit(item)">
+						<input class="btn btn-primary" type="button" value="Удалить" ng-click="delete(item)">
+					</td>
+				</tr>
+				<tr ng-if='item == activeItem'>
+						<td colspan="2"><input class='form-control' ng-model='item.text' type='text' autofocus></td>
+						<td><input type="date" class="date" ng-model='itemDate'></td>
+						<td><input type="button" class='btn btn-primary' value="Сохранить" ng-click='update(item)'></td>
+				</tr>
+				</tbody>
+			</table>
+			<form ng-submit="addItem()">
+				<table>
+					<tbody>
+						<tr>
+							<td><input class="form-control" type="text" ng-model="itemText" size="30"
+					       placeholder="Добавить задачу"></td>
+							<td><input class="form-control" type="date" ng-model="itemDate"></td>
+						</tr>
+					</tbody>
+				</table>
+				<input class="btn btn-primary" type="submit" value="Добавить">
+			</form>
+		</div>
 </div>
-
 </body>
 </html>
+
+
+

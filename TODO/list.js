@@ -1,27 +1,34 @@
 function ListCtrl($scope) {
 
     $scope.items = [
-        { text: 'Chocolate', done: true },
-        { text: 'Potato', done: false },
-        { text: 'Banana', done: false },
-        { text: 'Water', done: true }
+        { text: 'Позвонить родителям', date: '22.02.2017', done: true },
+        { text: 'Купить книгу', date: '20.02.2017', done: false },
+        { text: 'Сделать зарядку', date: '10.02.2017', done: false },
+        { text: 'Выгулять собаку', date: '15.02.2017', done: true }
     ];
-    if (localStorage.object){
-        $scope.items = JSON.parse(localStorage.getItem("object"));
-    }
+
     $scope.addItem = function () {
 
-        $scope.items.push({ text: $scope.itemText, done: false });
+        $scope.items.push({ text: $scope.itemText, date: $scope.itemDate, done: false });
         $scope.itemText = '';
     };
 
     $scope.remain = function () {
         var count = $scope.items.length;
         angular.forEach($scope.items, function(item) {
-            var sObj = JSON.stringify($scope.items);
-            localStorage.setItem("object", sObj);
             count -= item.done;
         });
         return count;
+    };
+
+    $scope.delete = function () {
+        $scope.items.splice(this.$index, 1);
+    };
+    var activeItem = 1;
+    $scope.edit = function(item) {
+        $scope.activeItem = item;
+    };
+    $scope.update = function(item) {
+        $scope.activeItem = null;
     };
 }
