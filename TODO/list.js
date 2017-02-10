@@ -1,4 +1,5 @@
-function ListCtrl($scope) {
+angular.module("todoList",[])
+    .controller("ListCtrl", function($scope) {
 
     $scope.items = [
         { text: 'Позвонить родителям', date: '22.02.2017', done: true },
@@ -24,11 +25,31 @@ function ListCtrl($scope) {
     $scope.delete = function () {
         $scope.items.splice(this.$index, 1);
     };
+
     var activeItem = 1;
     $scope.edit = function(item) {
         $scope.activeItem = item;
     };
+
     $scope.update = function(item) {
         $scope.activeItem = null;
     };
-}
+
+    //     $scope.modelvalue = false;
+    //     $scope.changeModelValue = function() {
+    //         $scope.modelvalue = !$scope.modelvalue;
+    //     }
+    // })
+    // .filter("showResolved", function () {
+    //     return function (value, boolian) {
+    //         var result = [];
+    //         if(boolian == false) return value;
+    //         value.map(function(item) {
+    //             if(item.resolved === false) result.push(item);
+    //         })
+    //         return result;
+    //
+    //     };
+
+});
+

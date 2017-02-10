@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>TODo list</title>
@@ -9,7 +9,7 @@
 	<link href="bootstrap.css" rel="stylesheet">
 	<link href="bootstrap-theme.css" rel="stylesheet">
 </head>
-<body>
+<body ng-app="todoList">
 	<div style="width:600px; margin:0 auto">
 		<h2 class="h1">Список задач</h2>
 		<div class="panel" ng-controller="ListCtrl">
@@ -17,7 +17,9 @@
 			<span class="h4">Осталось {{remain()}} из {{items.length}}</span>
 		
 			<table class="table table-striped">
+				
 				<tbody ng-repeat="item in items">
+				
 				<tr ng-if='item != activeItem'>
 					<td><input class="checkbox-inline" type="checkbox" ng-model="item.done"></td>
 					<td><span class="done-{{item.done}}">{{item.text}}</span></td>
@@ -27,14 +29,17 @@
 						<input class="btn btn-primary" type="button" value="Удалить" ng-click="delete(item)">
 					</td>
 				</tr>
+				
 				<tr ng-if='item == activeItem'>
 						<td colspan="2"><input class='form-control' ng-model='item.text' type='text' autofocus></td>
 						<td><input type="date" class="date" ng-model='itemDate'></td>
 						<td><input type="button" class='btn btn-primary' value="Сохранить" ng-click='update(item)'></td>
 				</tr>
 				</tbody>
+				
 			</table>
-			<form ng-submit="addItem()">
+			
+			<form ng-submit="addItem()" class="buttons">
 				<table>
 					<tbody>
 						<tr>
@@ -44,8 +49,16 @@
 						</tr>
 					</tbody>
 				</table>
+				
+				<div class="buttons">
+					
 				<input class="btn btn-primary" type="submit" value="Добавить">
+				<input class="btn btn-primary" type="button" value="На сегодня" ng-click="">
+				<input class="btn btn-primary" type="button" value="Выполненные" ng-click="">
+					
+				</div>
 			</form>
+			
 		</div>
 </div>
 </body>

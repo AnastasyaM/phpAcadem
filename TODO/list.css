@@ -127,3 +127,6 @@ td input {
     float: right;
     margin-right: 0;
 }
+.buttons {
+    margin-top: 20px;
+}
